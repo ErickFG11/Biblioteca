@@ -4,11 +4,10 @@ $(document).ready(function()
     var password;
     $("#btn_login").click(function (e){
         usuario=$("#sp_uname").val();
-        alert("Java: "+usuario);
         password=$("#sp_pass").val();
-        alert("Java: "+password);
         var parametros = {
-            "usuario" : usuario, "password": password
+            "usuario" : usuario, 
+            "password": password
         };
         $.ajax({
             

@@ -9,6 +9,10 @@
   <meta name="author" content="">
 
   <title>Librerias El Jodido</title>
+  
+  <!-- Jquery -->
+  <script type="text/javascript" src="jquery/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="jquery/java.js"></script> 
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -22,7 +26,6 @@
 
   <!-- Custom styles for this template -->
   <link href="css/agency.min.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
 
 </head>
 
@@ -54,15 +57,19 @@
           <li class="nav-item dropdown">
             <a class="nav-link js-scroll-trigger dropdown-toggle" href="#" data-toggle="dropdown">
             <i class='fas fa-user'></i>Login</a>
-            <div class="dropdown-menu">
-              <form class="form-horizontal"  method="post" accept-charset="UTF-8">
-                <input id="sp_uname" class="form-control login" type="text" name="sp_uname" placeholder="Username"/>
-                <input id="sp_pass" class="form-control login" type="password" name="sp_pass" placeholder="Password"/>
-                <input id="btn_login" class="btn btn-primary" type="submit" name="submit" value="login" />
-                <input id="btn_registro" class="btn btn-primary" type="submit" name="submit" value="Sign up" />
-              </form>
+            
+            <div class="dropdown-menu p-4" style="width: 250px">
+              <div class="form-group" accept-charset="UTF-8">
+                <input id="sp_uname" style="width: 100%" class="form-control login" type="text" name="sp_uname" placeholder="Username"/>
+                <input id="sp_pass" style="width: 100%" class="form-control login" type="password" name="sp_pass" placeholder="Password"/>
+              </div>
+                <input id="btn_login" class="btn btn-primary" type="submit"  value="Login"/>
+                <input id="btn_register" class="btn btn-primary" type="submit"  value="Registro"/>
             </div>
             
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#">Logout</a>
           </li>
         </ul>
       </div>
@@ -96,11 +103,11 @@
                   </div> 
                     <div class="form-group d-flex flex-column col-5">
                       <label for="inputAddress">Titulo</label>
-                      <input type="text" autocomplete="off" class="form-control" id="titulo" placeholder="El pricipito">
+                      <input type="text" autocomplete="off" class="form-control" id="titulo" placeholder="El pricipito" readonly>
                       <label for="inputAddress">Autor</label>
-                      <input type="text" autocomplete="off" class="form-control" id="autor" placeholder="Antoine de Saint-Exupéry">
+                      <input type="text" autocomplete="off" class="form-control" id="autor" placeholder="Antoine de Saint-Exupéry" readonly>
                       <label for="inputAddress">Editorial</label>
-                      <input type="text" autocomplete="off" class="form-control" id="editorial" placeholder=" Publicaciones y Ediciones Salamandra, S.A.">
+                      <input type="text" autocomplete="off" class="form-control" id="editorial" placeholder=" Publicaciones y Ediciones Salamandra, S.A." readonly>
                     </div> 
 
                     <div class="form-group d-flex flex-column col-3">
@@ -108,13 +115,13 @@
                         <div class="input-group-prepend">
                           <div class="input-group-text bg-warning"><i class='far fa-money-bill-alt'></i></div>
                         </div>
-                      <input type="text" autocomplete="off" class="form-control " id="price" placeholder="Precio">
+                      <input type="text" autocomplete="off" class="form-control " id="price" placeholder="Precio" readonly>
 
                       <div class="input-group py-4">
                         <div class="input-group-prepend">
-                          <div class="input-group-text bg-warning"><i class='far fa-money-bill-alt'></i></div>
+                          <div class="input-group-text bg-warning"><i class='fas fa-book-open'></i></div>
                         </div>
-                      <input type="text" autocomplete="off" class="form-control " id="price" placeholder="Precio">
+                      <input type="text" autocomplete="off" class="form-control " id="cant" placeholder="Cantidad" readonly>
                       </div>
                     </div> 
             </div>
@@ -152,7 +159,7 @@
                   <div class="input-group-prepend">
                       <div class="input-group-text bg-warning"><i class='fas fa-book'></i></div>
                   </div>
-                  <input type="text" autocomplete="off" class="form-control " id="nombre" placeholder="Nombre de libro">
+                  <input type="text" autocomplete="off" class="form-control " id="nombre" placeholder="Nombre de libro" >
               </div>
             </div>
           </div> 
@@ -236,8 +243,8 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase">About</h2>
-          <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+          <h2 class="section-heading text-uppercase">Se parte de nosotros</h2>
+          <h3 class="section-subheading text-muted">Nuestro recorrido con los estudihambres</h3>
         </div>
       </div>
       <div class="row">
@@ -317,16 +324,17 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
-          <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+          <h2 class="section-heading text-uppercase">Nuestro asombroso equipo</h2>
+          <h3 class="section-subheading text-muted">Hicimos cosas que ni sabiamos que existian</h3>
         </div>
       </div>
       <div class="row">
+
         <div class="col-sm-4">
           <div class="team-member">
-            <img class="mx-auto rounded-circle" src="img/team/1.jpg" alt="">
-            <h4>Kay Garland</h4>
-            <p class="text-muted">Lead Designer</p>
+            <img class="mx-auto rounded-circle" src="img/team/a.jpg" alt="">
+            <h4>Elizabeth</h4>
+            <p class="text-muted">Front end</p>
             <ul class="list-inline social-buttons">
               <li class="list-inline-item">
                 <a href="#">
@@ -346,11 +354,12 @@
             </ul>
           </div>
         </div>
+
         <div class="col-sm-4">
           <div class="team-member">
-            <img class="mx-auto rounded-circle" src="img/team/2.jpg" alt="">
-            <h4>Larry Parker</h4>
-            <p class="text-muted">Lead Marketer</p>
+            <img class="mx-auto rounded-circle" src="img/team/b.jpg" alt="">
+            <h4>Erick Franco</h4>
+            <p class="text-muted">Project manager</p>
             <ul class="list-inline social-buttons">
               <li class="list-inline-item">
                 <a href="#">
@@ -370,11 +379,12 @@
             </ul>
           </div>
         </div>
+  
         <div class="col-sm-4">
           <div class="team-member">
-            <img class="mx-auto rounded-circle" src="img/team/3.jpg" alt="">
-            <h4>Diana Pertersen</h4>
-            <p class="text-muted">Lead Developer</p>
+            <img class="mx-auto rounded-circle" src="img/team/c.jpg" alt="">
+            <h4>Francisco</h4>
+            <p class="text-muted">Back end</p>
             <ul class="list-inline social-buttons">
               <li class="list-inline-item">
                 <a href="#">
@@ -394,10 +404,35 @@
             </ul>
           </div>
         </div>
+
+        <div class="col-sm-12">
+            <div class="team-member">
+              <img class="mx-auto rounded-circle" src="img/team/d.jpg" alt="">
+              <h4>Jesús</h4>
+              <p class="text-muted">Back end</p>
+              <ul class="list-inline social-buttons">
+                <li class="list-inline-item">
+                  <a href="#">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#">
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#">
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
       </div>
       <div class="row">
         <div class="col-lg-8 mx-auto text-center">
-          <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
+          <p class="large text-muted">PHP (acrónimo recursivo de PHP: Hypertext Preprocessor) es un lenguaje de código abierto muy popular especialmente adecuado para el desarrollo web y que puede ser incrustado en HTML.</p>
         </div>
       </div>
     </div>
@@ -408,22 +443,22 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-4">
-          <span class="copyright">Copyright &copy; Your Website 2019</span>
+          <span class="copyright">Copyright &copy; El jodido 2019</span>
         </div>
         <div class="col-md-4">
           <ul class="list-inline social-buttons">
             <li class="list-inline-item">
-              <a href="#">
+              <a href="https://twitter.com">
                 <i class="fab fa-twitter"></i>
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="#">
+              <a href="https://www.facebook.com">
                 <i class="fab fa-facebook-f"></i>
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="#">
+              <a href="https://mx.linkedin.com/?trk=guest_homepage-basic_nav-header-logo">
                 <i class="fab fa-linkedin-in"></i>
               </a>
             </li>
