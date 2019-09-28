@@ -63,13 +63,13 @@
                 <input id="sp_uname" style="width: 100%" class="form-control login" type="text" name="sp_uname" placeholder="Username"/>
                 <input id="sp_pass" style="width: 100%" class="form-control login" type="password" name="sp_pass" placeholder="Password"/>
               </div>
-                <input id="btn_login" class="btn btn-primary" type="submit"  value="Login"/>
-                <input id="btn_register" class="btn btn-primary" type="submit"  value="Registro"/>
+                <input id="btn_login" class="btn btn-primary" type="submit" value="Login"/>
+                <input id="btn_register" class="btn btn-primary" type="button" value="Registro" onclick = "location='login_registro.html'"/>
             </div>
             
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#">Logout</a>
+            <a id="btn_logout" href="#" class="nav-link">Logout</a>
           </li>
         </ul>
       </div>
@@ -93,7 +93,11 @@
              
             <div class="col-12 text-center d-flex flex-column">
                 <h2 class="section-heading text-uppercase">Libros</h2> 
-                <input type="text" autocomplete="off" class="form-control" id="NameBook" placeholder="Nombre del Libro">
+              </div>
+
+              <div class="col-12 d-flex justify-content-center">
+                <label class="col4"></label>
+                <input type="text" id="NameBook" autocomplete="off" class="form-control text-center" style="width: 50%" placeholder="Nombre del Libro">
               </div>
               
               <div id="form" class="py-4 col-12 d-flex">
@@ -103,11 +107,11 @@
                   </div> 
                     <div class="form-group d-flex flex-column col-5">
                       <label for="inputAddress">Titulo</label>
-                      <input type="text" autocomplete="off" class="form-control" id="titulo" placeholder="El pricipito" readonly>
-                      <label for="inputAddress">Autor</label>
-                      <input type="text" autocomplete="off" class="form-control" id="autor" placeholder="Antoine de Saint-Exupéry" readonly>
-                      <label for="inputAddress">Editorial</label>
-                      <input type="text" autocomplete="off" class="form-control" id="editorial" placeholder=" Publicaciones y Ediciones Salamandra, S.A." readonly>
+                      <input type="text" autocomplete="off" class="form-control" id="titulo" placeholder="El pricipito" >
+                      <label class="py-2" for="inputAddress">Autor</label>
+                      <input type="text" autocomplete="off" class="form-control" id="autor" placeholder="Antoine de Saint-Exupéry" >
+                      <label class="py-2" for="inputAddress">Editorial</label>
+                      <input type="text" autocomplete="off" class="form-control" id="editorial" placeholder=" Publicaciones y Ediciones Salamandra" >
                     </div> 
 
                     <div class="form-group d-flex flex-column col-3">
@@ -115,13 +119,13 @@
                         <div class="input-group-prepend">
                           <div class="input-group-text bg-warning"><i class='far fa-money-bill-alt'></i></div>
                         </div>
-                      <input type="text" autocomplete="off" class="form-control " id="price" placeholder="Precio" readonly>
+                      <input type="text" autocomplete="off" class="form-control " id="price" placeholder="Precio" >
 
                       <div class="input-group py-4">
                         <div class="input-group-prepend">
                           <div class="input-group-text bg-warning"><i class='fas fa-book-open'></i></div>
                         </div>
-                      <input type="text" autocomplete="off" class="form-control " id="cant" placeholder="Cantidad" readonly>
+                      <input type="text" autocomplete="off" class="form-control " id="cant" placeholder="Cantidad" >
                       </div>
                     </div> 
             </div>
@@ -138,7 +142,6 @@
   <section class="page-section" id="admin">
     <div class="container text-center" >
         <h1 class="py-4 bg-dark text-light rounded"><i class="far fa-paper-plane"></i>Administra</h1>
-        
         <div class="border border-primary">
         <!--iNPUT ID-->
         <div class="py-2 d-flex justify-content-center" >    
@@ -147,7 +150,7 @@
                   <div class="input-group-prepend">
                       <div class="input-group-text bg-warning"><i class='fas fa-key'></i></div>
                   </div>
-                  <input type="text" autocomplete="off" class="form-control " id="id" placeholder="Código" readonly>
+                  <input type="text" autocomplete="off" class="form-control " id="codigo" placeholder="Código" >
               </div>
             </div>
           </div>
@@ -159,7 +162,7 @@
                   <div class="input-group-prepend">
                       <div class="input-group-text bg-warning"><i class='fas fa-book'></i></div>
                   </div>
-                  <input type="text" autocomplete="off" class="form-control " id="nombre" placeholder="Nombre de libro" >
+                  <input type="text" autocomplete="off" class="form-control " id="ad_nombre" placeholder="Nombre de libro" >
               </div>
             </div>
           </div> 
@@ -171,7 +174,7 @@
                       <div class="input-group-prepend">
                           <div class="input-group-text bg-warning"><i class='fas fa-pen-alt'></i></div>
                       </div>
-                      <input type="text" autocomplete="off" class="form-control " id="autor" placeholder="Autor">
+                      <input type="text" autocomplete="off" class="form-control " id="ad_autor" placeholder="Autor">
                   </div>
                 </div>
               </div> 
@@ -183,7 +186,7 @@
                       <div class="input-group-prepend">
                           <div class="input-group-text bg-warning"><i class='fas fa-warehouse'></i></div>
                       </div>
-                      <input type="text" autocomplete="off" class="form-control " id="editorial" placeholder="Editorial">
+                      <input type="text" autocomplete="off" class="form-control " id="ad_editorial" placeholder="Editorial">
                   </div>
                 </div>
               </div> 
@@ -195,11 +198,11 @@
                       <div class="input-group-prepend">
                           <div class="input-group-text bg-warning"><i class='	fab fa-pushed'></i></div>
                       </div>
-                      <input type="text" autocomplete="off" class="form-control " id="cantidad" placeholder="Cantidad">
+                      <input type="text" autocomplete="off" class="form-control " id="ad_cantidad" placeholder="Cantidad">
                       <div class="input-group-prepend">
                           <div class="input-group-text bg-warning"><i class='far fa-money-bill-alt'></i></div>
                       </div>
-                      <input type="text" autocomplete="off" class="form-control " id="precio" placeholder="Precio">
+                      <input type="text" autocomplete="off" class="form-control " id="ad_precio" placeholder="Precio">
                   </div>
                 </div>
               </div> 
@@ -222,7 +225,7 @@
 
         <!-- Bootstrap table  -->
    <div class="d-flex justify-content-center table-data">
-      <table class="table table-striped table-dark">
+      <table id="tabla" class="table table-striped table-dark">
           <thead class="thead-dark">
               <tr>
                   <th>ID</th>

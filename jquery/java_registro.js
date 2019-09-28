@@ -9,29 +9,37 @@ $(document).ready(function()
 
     $("#btn_registro").click(function (e){
         usuario=$("#name").val();
-        alert("Java: "+nombre);
         apellidos=$("#apellidos").val();
-        alert("Java: "+apellidos);
         correo=$("#correo").val();
-        alert("Java: "+correo);
         password=$("#pass").val();
-        alert("Java: "+password);
         validar_pass=$("#validar_pass").val();
-        alert("Java: "+validar_pass);
         tipo=$("#combo").selectedValue;
+
         var parametros = {
             "nombre" : nombre, "apellidos": apellidos, "correo": correo, "password": password, "validar_pass": validar_pass, "tipo": tipo
         };
-        $.ajax({
+
+        if(password==validar_pass){
+            $.ajax({
             
-            url: 'http://localhost:9090/index.php',
-            data: parametros,
-            dataType: 'jsonp',
-            type: "GET",
-            success: function (respuesta) {
-                alert("PHP: "+respuesta.msg);
-            }
-          });
+                url: 'http://localhost:9090/index.php',
+                data: parametros,
+                dataType: 'jsonp',
+                type: "GET",
+                success: function (respuesta) {
+                    if(respuesta.msg=='ok'){
+                        alert("Registro exitoso");
+                    }
+                    else{
+                        alert("Error, Intente de nuevo");
+                    }
+                }
+              });
+        }
+        else{
+            alert("Los password no coinciden");
+        }
+      
 
     }); 
 });
