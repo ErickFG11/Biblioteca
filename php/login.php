@@ -22,7 +22,7 @@ while($res = mysqli_fetch_array($query)){
         }
     }
 
-if(isset($_GET['callback'])){
+if($_GET['callback']){
     /*Si es una petición cross-domain (JSONP), devolvemos 
     en la respuesta el identificador de la petición. */
     echo $_GET['callback'].'('.json_encode($jsondata).')';
