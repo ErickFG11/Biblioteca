@@ -8,21 +8,26 @@ $(document).ready(function()
     var tipo;
 
     $("#btn_registro").click(function (e){
-        usuario=$("#name").val();
+        usuario=$("#user").val();
+        nombre=$("#name").val();
         apellidos=$("#apellidos").val();
         correo=$("#correo").val();
         password=$("#pass").val();
         validar_pass=$("#validar_pass").val();
-        tipo=$("#combo").selectedValue;
+        tipo=$("#combo").val();
 
         var parametros = {
-            "nombre" : nombre, "apellidos": apellidos, "correo": correo, "password": password, "validar_pass": validar_pass, "tipo": tipo
+            "usuario" : usuario, 
+            "password": password, 
+            "nombre" : nombre, 
+            "apellidos": apellidos, 
+            "correo": correo, 
+            "tipo": tipo
         };
 
         if(password==validar_pass){
             $.ajax({
-            
-                url: 'http://localhost:9090/index.php',
+                url: 'http://localhost:8000/Biblioteca/php/registrar.php',
                 data: parametros,
                 dataType: 'jsonp',
                 type: "GET",

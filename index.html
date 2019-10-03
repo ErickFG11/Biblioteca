@@ -14,6 +14,7 @@
   <script type="text/javascript" src="jquery/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="jquery/java.js"></script> 
 
+
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -54,22 +55,9 @@
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#team">Team</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link js-scroll-trigger dropdown-toggle" href="#" data-toggle="dropdown">
-            <i class='fas fa-user'></i>Login</a>
-            
-            <div class="dropdown-menu p-4" style="width: 250px">
-              <div class="form-group" accept-charset="UTF-8">
-                <input id="sp_uname" style="width: 100%" class="form-control login" type="text" name="sp_uname" placeholder="Username"/>
-                <input id="sp_pass" style="width: 100%" class="form-control login" type="password" name="sp_pass" placeholder="Password"/>
-              </div>
-                <input id="btn_login" class="btn btn-primary" type="submit" value="Login"/>
-                <input id="btn_register" class="btn btn-primary" type="button" value="Registro" onclick = "location='login_registro.html'"/>
-            </div>
-            
-          </li>
+         
           <li class="nav-item">
-            <a id="btn_logout" href="#" class="nav-link">Logout</a>
+            <a id="btn_logout" href="#" class="nav-link">Salir</a>
           </li>
         </ul>
       </div>
@@ -150,7 +138,7 @@
                   <div class="input-group-prepend">
                       <div class="input-group-text bg-warning"><i class='fas fa-key'></i></div>
                   </div>
-                  <input type="text" autocomplete="off" class="form-control " id="codigo" placeholder="Código" >
+                  <input type="text" autocomplete="off" class="form-control" id="codigo" placeholder="Código" readonly>
               </div>
             </div>
           </div>
