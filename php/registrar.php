@@ -17,7 +17,7 @@ $pass = 'root';
 
 $conn = mysqli_connect($host, $user, $pass, $dbname);
 
-$sql= "INSERT INTO login (usuario, contrasena, nombre, apellido, correo, tipo_usuario) VALUES ('$usuario', '$password', '$nombre' '$apellidos', '$correo', '$tipo')";
+$sql= "INSERT INTO login (usuario, contrasena, nombre, apellido, correo, tipo_usuario) VALUES ('$usuario', '$password', '$nombre', '$apellidos', '$correo', '$tipo')";
 if(mysqli_query($conn, $sql)){
     $jsondata = array('msg' => 'ok');
 }

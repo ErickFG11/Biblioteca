@@ -32,24 +32,31 @@ $(document).ready(function()
                 type: "GET",
                 success: function (respuesta) {      
                     if(respuesta.msg=='ok'){
-                        alert("Bienvenido");
+                        Swal.fire({
+                            title: 'Bienvenido',
+                            type: 'success'
+                            });
                         $(location).attr('href','index.html');
                     }
                     else{
-                        alert("Intente más tarde");
+                        Swal.fire({
+                            title: 'Error, Intente más tarde',
+                            type: 'error'
+                            });
                     }
                 }
               });
         }
         else{
-            alert("Ingrese sus credenciales");
-            /*Swal.fire({
-                title: 'Exito, registro exitoso',
-                type: 'success',
-                padding: '3em',
-                footer: 'Se ha registrado su libro',
-                closeOnClickOutside: false
-                });*/
+            Swal.fire({
+                title: 'Error, Ingrese sus credenciales',
+                type: 'error'
+                });
         }       
     }); 
+
+    $("#btn_registro").click(function (e){
+        $(location).attr('href','login_registro.html');
+    });
+
 });

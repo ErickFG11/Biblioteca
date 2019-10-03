@@ -7,7 +7,8 @@ $(document).ready(function()
     var validar_pass;
     var tipo;
 
-    $("#btn_registro").click(function (e){
+    $("#btn_registrar").click(function (e){
+        
         usuario=$("#user").val();
         nombre=$("#name").val();
         apellidos=$("#apellidos").val();
@@ -33,16 +34,25 @@ $(document).ready(function()
                 type: "GET",
                 success: function (respuesta) {
                     if(respuesta.msg=='ok'){
-                        alert("Registro exitoso");
+                        Swal.fire({
+                            title: 'Registro exitoso',
+                            type: 'success'
+                            });
                     }
                     else{
-                        alert("Error, Intente de nuevo");
+                        Swal.fire({
+                            title: 'Error, Intente de nuevo',
+                            type: 'error'
+                            });
                     }
                 }
               });
         }
         else{
-            alert("Los password no coinciden");
+            Swal.fire({
+                title: 'Error, Las contraseñas no coinciden',
+                type: 'error'
+                });
         }
       
 

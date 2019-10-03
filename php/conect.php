@@ -1,15 +1,16 @@
 <?php
-$servername = "mysql";
-$database = "libreria";
-$username = "root";
-$password = "secret";
+$host = 'mysql';
+$dbname = 'libreria';
+$user = 'root';
+$pass = 'root';
 
-echo "Hola";
-// Create connection
-$conn = mysqli_connect($servername,$username,$password);
+$conn = mysqli_connect($host, $user, $pass, $dbname);
 
-if(mysqli_connect_errno()){
-	echo "Falló la conexión";
+$sql= "INSERT INTO login (usuario, contrasena, nombre, apellido, correo, tipo_usuario) VALUES ('panchin', '12345', 'Francisco', 'Morales', 'ads@ugto.mx', 'Administrador')";
+if(mysqli_query($conn, $sql)){
+    echo "ok";
+}else{
+	echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
 
 ?>

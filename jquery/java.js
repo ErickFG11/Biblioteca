@@ -10,7 +10,7 @@ $(document).ready(function(){
 
     $('#btn_logout').click(function (e) { 
         alert("Adios");
-            $(location).attr('href','login.html');
+        $(location).attr('href','login.html');
     });     
 
     $('#add').click(function (e) { 
@@ -38,40 +38,13 @@ $(document).ready(function(){
                     alert("Registro exitoso");
                 }
                 else{
-<<<<<<< Updated upstream
                     alert("Datos incorrectos");
                      //limpiar campos
                      $("#sp_uname").val('');
                      $("#sp_pass").val('');
                 }        
-=======
-                    alert("Intente de nuevo");
-                }
->>>>>>> Stashed changes
             }
           });
     });     
-
-<<<<<<< Updated upstream
-    $('#add').click(function (e) { 
-        var v=1;
-
-        var parametros = {
-            "valor" : v
-        };
-
-        $.ajax({
-            url: 'http://localhost:9090/Biblioteca/php/con.php',
-            data: parametros,
-            dataType: 'jsonp',
-            type: "GET",
-            success: function (respuesta){
-                alert("DB: "+respuesta[0]);
-            }
-          });
-    });     
-
-=======
->>>>>>> Stashed changes
 
 });
