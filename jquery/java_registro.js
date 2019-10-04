@@ -7,16 +7,23 @@ $(document).ready(function()
     var validar_pass;
     var tipo;
 
-    $("#btn_registro").click(function (e){
-        usuario=$("#name").val();
+    $("#btn_registrar").click(function (e){
+        
+        usuario=$("#user").val();
+        nombre=$("#name").val();
         apellidos=$("#apellidos").val();
         correo=$("#correo").val();
         password=$("#pass").val();
         validar_pass=$("#validar_pass").val();
-        tipo=$("#combo").selectedValue;
+        tipo=$("#combo").val();
 
         var parametros = {
-            "nombre" : nombre, "apellidos": apellidos, "correo": correo, "password": password, "validar_pass": validar_pass, "tipo": tipo
+            "usuario" : usuario, 
+            "password": password, 
+            "nombre" : nombre, 
+            "apellidos": apellidos, 
+            "correo": correo, 
+            "tipo": tipo
         };
 
         if(password==validar_pass){
@@ -28,16 +35,25 @@ $(document).ready(function()
                 type: "GET",
                 success: function (respuesta) {
                     if(respuesta.msg=='ok'){
-                        alert("Registro exitoso");
+                        Swal.fire({
+                            title: 'Registro exitoso',
+                            type: 'success'
+                            });
                     }
                     else{
-                        alert("Error, Intente de nuevo");
+                        Swal.fire({
+                            title: 'Error, Intente de nuevo',
+                            type: 'error'
+                            });
                     }
                 }
               });
         }
         else{
-            alert("Los password no coinciden");
+            Swal.fire({
+                title: 'Error, Las contraseñas no coinciden',
+                type: 'error'
+                });
         }
       
 

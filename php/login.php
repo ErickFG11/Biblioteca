@@ -12,9 +12,7 @@ $user = 'root';
 $pass = 'root';
 
 $conn = mysqli_connect($host, $user, $pass, $dbname);
-    if (mysqli_connect_errno()){
-            echo "Error de conexión: ".mysqli_connect_errno();
-        }   
+    
 $query = mysqli_query($conn, "select * from login");
 while($res = mysqli_fetch_array($query)){
     if($res['usuario']==$us && $res['contrasena']==$pas){
