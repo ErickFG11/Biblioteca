@@ -22,7 +22,7 @@ $(document).ready(function()
         if(password==validar_pass){
             $.ajax({
             
-                url: 'http://localhost:9090/index.php',
+                url: 'http://localhost:9090/...',
                 data: parametros,
                 dataType: 'jsonp',
                 type: "GET",

@@ -66,8 +66,7 @@ $(document).ready(function(){
                      //limpiar campos
                      $("#sp_uname").val('');
                      $("#sp_pass").val('');
-                }
-                
+                }        
             }
           });
     });    
@@ -91,5 +90,24 @@ $(document).ready(function(){
         $("#ad_precio").prop('disabled', true);
         $("#tabla").hide();
     });     
+
+    $('#add').click(function (e) { 
+        var v=1;
+
+        var parametros = {
+            "valor" : v
+        };
+
+        $.ajax({
+            url: 'http://localhost:9090/Biblioteca/php/con.php',
+            data: parametros,
+            dataType: 'jsonp',
+            type: "GET",
+            success: function (respuesta){
+                alert("DB: "+respuesta[0]);
+            }
+          });
+    });     
+
 
 });

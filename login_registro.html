@@ -12,7 +12,8 @@
 
   <!-- Jquery -->
   <script type="text/javascript" src="jquery/jquery-3.4.1.min.js"></script>
-  <script type="text/javascript" src="jquery/java_registro.js"></script> 
+  <script type="text/javascript" src="jquery/java_registro.js"></script>
+  <script type="text/javascript" src="jquery/vali_javaregis.js"></script>  
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -48,6 +49,34 @@
     <form id="frm" class="login100-form validate-form">
 
       <h1 class="py-2 text-light rounded">Registro</h1>
+
+      <div class="wrap-input100 validate-input" data-validate = "Usuario">
+        <div class="input-group form-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-user"></i></span>
+            <input id="user" type="name" class="form-control" placeholder="Usuario">
+          </div>
+        </div>
+      </div>
+
+      <div class="wrap-input100 validate-input" data-validate="Password">
+        <div class="input-group form-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-key"></i></span>
+            <input id="pass" type="password" class="form-control" placeholder="Password">
+          </div>
+     </div>
+     </div>
+
+     <div class="wrap-input100 validate-input" data-validate="Repetir">
+        <div class="input-group form-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-key"></i></span>
+            <input id="validar_pass" type="password" class="form-control" placeholder="Repetir password">
+          </div>
+      </div>
+     </div>
+
        <div class="wrap-input100 validate-input" data-validate = "Nombre">
           <div class="input-group form-group">
               <div class="input-group-prepend">
@@ -69,7 +98,7 @@
        <div class="wrap-input100 validate-input" data-validate="Correo electrónico">
           <div class="input-group form-group">
               <div class="input-group-prepend">
-                  <span class="input-group-text"><i class="fas fa-user"></i></span>
+                  <span class="input-group-text"><i class="fas fa-mail-bulk"></i></span>
               <input id="correo" type="correo" class="form-control" placeholder="Correo">
             </div>
        </div>
@@ -89,24 +118,6 @@
       </div>
     </div> 
        
-       <div class="wrap-input100 validate-input" data-validate="Password">
-          <div class="input-group form-group">
-              <div class="input-group-prepend">
-                  <span class="input-group-text"><i class="fas fa-key"></i></span>
-              <input id="pass" type="password" class="form-control" placeholder="Password">
-            </div>
-       </div>
-       </div>
-
-       <div class="wrap-input100 validate-input" data-validate="Validarpassword">
-          <div class="input-group form-group">
-              <div class="input-group-prepend">
-                  <span class="input-group-text"><i class="fas fa-key"></i></span>
-              <input id="validar_pass" type="password" class="form-control" placeholder="Validarpassword">
-            </div>
-        </div>
-       </div>
-
        <div class="container-login100-form-btn">
            <button id="btn_registro" class="btn btn-primary btn-xl text-uppercase js-scroll-trigger">
                Registrarse
