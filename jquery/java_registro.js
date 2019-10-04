@@ -6,6 +6,17 @@ $(document).ready(function()
     var password;
     var validar_pass;
     var tipo;
+ 
+    //validaciones 
+    function vacios(us, nom, ape, cor, pa){
+    if (us.length!=0 && nom.length!=0 && ape.length!=0 && cor.length!=0 &&pa.length!=0) 
+    {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
 
     $("#btn_registrar").click(function (e){
         
@@ -26,6 +37,9 @@ $(document).ready(function()
             "tipo": tipo
         };
 
+        //Si no hay vacios prosigue 
+        if(vacios(usuario, nombre, apellidos, correo, password)==true){
+        //Si las contraseñas son iguales prosigue
         if(password==validar_pass){
             $.ajax({
                 url: 'http://localhost:8000/Biblioteca/php/registrar.php',
@@ -38,12 +52,29 @@ $(document).ready(function()
                             title: 'Registro exitoso',
                             type: 'success'
                             });
+
+                //Limpiar campos 
+                        $("#user").val("");
+                        $("#name").val("");
+                        $("#apellidos").val("");
+                        $("#correo").val("");
+                        $("#pass").val("");
+                        $("#validar_pass").val("");
                     }
                     else{
                         Swal.fire({
                             title: 'Error, Intente de nuevo',
                             type: 'error'
                             });
+
+                //Limpiar campos            
+                        $("#user").val("");
+                        $("#name").val("");
+                        $("#apellidos").val("");
+                        $("#correo").val("");
+                        $("#pass").val("");
+                        $("#validar_pass").val("");
+
                     }
                 }
               });
@@ -54,7 +85,13 @@ $(document).ready(function()
                 type: 'error'
                 });
         }
-      
+        }
+        else{
+            Swal.fire({
+                title: 'Error, Llene todos los campos',
+                type: 'error'
+                });
+        }
 
     }); 
 });
