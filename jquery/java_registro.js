@@ -17,29 +17,21 @@ $(document).ready(function()
         return false;
     }
 }
-    //**********************************************************************
-    //Liz estos son ejemplos para validar ya funcionales acomodalos con el id de la caja de texto 
-    
-    //solo letras 
     $('#user').on('input', function () { 
+    this.value = this.value.replace(/[^ a-z0-9áéíóúüñ]+/ig,"");
+    });
+
+    $('#name').on('input', function () { 
         this.value = this.value.replace(/[^ a-záéíóúüñ]+/ig,"");
     });
 
-    //solo numeros
-    $('#name').on('input', function () { 
-        this.value = this.value.replace(/[^ 0-9]+/ig,"");
-    });
-
-    //numeros y letras pero no caracteres especiales como @
     $('#apellidos').on('input', function () { 
-        this.value = this.value.replace(/[^ a-z0-9áéíóúüñ]+/ig,"");
+        this.value = this.value.replace(/[^ a-záéíóúüñ]+/ig,"");
     });
 
-    //correos incluye @ y punto
     $('#correo').on('input', function () { 
         this.value = this.value.replace(/[^ a-z0-9áéíóúüñ@.]+/ig,"");
     });
-    //*********************************************************************
 
     $("#btn_login").click(function (e){
         $(location).attr('href','login.html');
@@ -70,7 +62,7 @@ $(document).ready(function()
         if(password==validar_pass){
             $.ajax({
             
-                url: 'http://localhost:9090/...',
+                url: 'http://localhost:8000/Biblioteca/php/registrar.php',
                 data: parametros,
                 dataType: 'jsonp',
                 type: "GET",
@@ -80,6 +72,7 @@ $(document).ready(function()
                             title: 'Registro exitoso',
                             type: 'success'
                             });
+                        
 
                 //Limpiar campos 
                         $("#user").val("");
