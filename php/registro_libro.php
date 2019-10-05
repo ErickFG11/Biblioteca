@@ -1,10 +1,10 @@
 <?php 
 
-$titulo = $_POST['titulo'];
-$autor = $_POST['autor'];
-$editorial = $_POST['editorial'];
-$precio = $_POST['genero'];
-$cantidad = $_POST['anio'];
+$titulo = $_GET['titulo'];
+$autor = $_GET['autor'];
+$editorial = $_GET['editorial'];
+$precio = $_GET['precio'];
+$cantidad = $_GET['cantidad'];
 $portada = str_replace(" ", "_", $titulo).".jpg";
 
 $jsondata = array();
