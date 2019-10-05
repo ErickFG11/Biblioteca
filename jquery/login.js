@@ -35,18 +35,17 @@ $(document).ready(function()
                         Swal.fire({
                             position: 'center',
                             type: 'success',
-                            title: 'Your work has been saved',
+                            title: 'Bienvenido',
                             showConfirmButton: false,
                             timer: 1500
                           })
                             setTimeout(function() { 
-                                $(location).attr('href','index.html');
-                            }, 2000);
-                        
+                                $(location).attr('href','index.php');
+                            }, 1500);
                     }
                     else{
                         Swal.fire({
-                            title: 'Error, Datos incorrectos',
+                            title: 'Datos incorrectos',
                             type: 'error'
                             });
                         
@@ -59,8 +58,8 @@ $(document).ready(function()
         }
         else{
             Swal.fire({
-                title: 'Error, Ingrese sus credenciales',
-                type: 'error'
+                title: 'Ingrese sus credenciales',
+                type: 'warning'
                 });
         }       
     }); 

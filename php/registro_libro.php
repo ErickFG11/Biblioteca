@@ -1,4 +1,5 @@
 <?php 
+include "conect.php";
 
 $titulo = $_GET['titulo'];
 $autor = $_GET['autor'];
@@ -8,13 +9,6 @@ $cantidad = $_GET['cantidad'];
 $portada = str_replace(" ", "_", $titulo).".jpg";
 
 $jsondata = array();
-$host = 'mysql';
-$dbname = 'libreria';
-$user = 'root';
-$pass = 'root';
-
-// Create connection
-$conn = mysqli_connect($host,$user,$pass, $dbname);
 
 //registro 
 $sql = "INSERT INTO libro (titulo, autor, editorial, precio, cantidad, portada) VALUES ('$titulo', '$autor', '$editorial', $precio, $cantidad, '$portada')";

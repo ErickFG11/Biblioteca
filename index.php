@@ -9,6 +9,9 @@
 
   <title>Librerias El Jodido</title>
   
+   <!-- Alerts -->
+   <script src="plugins/sweetalert2.min.css"></script>
+
   <!-- Jquery -->
   <script type="text/javascript" src="jquery/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="jquery/java.js"></script> 
@@ -54,7 +57,7 @@
           </li>
          
           <li class="nav-item">
-            <a id="btn_logout" href="#" class="nav-link">Salir</a>
+            <a id="btn_logout" href="#a" class="nav-link">Salir</a>
           </li>
         </ul>
       </div>
@@ -92,11 +95,11 @@
                   </div> 
                     <div class="form-group d-flex flex-column col-5">
                       <label for="inputAddress">Titulo</label>
-                      <input type="text" autocomplete="off" class="form-control" id="titulo" placeholder="El pricipito" readonly>
+                      <input type="text" autocomplete="off" class="form-control" id="titulo" readonly>
                       <label class="py-2" for="inputAddress">Autor</label>
-                      <input type="text" autocomplete="off" class="form-control" id="autor" placeholder="Antoine de Saint-Exupéry" readonly>
+                      <input type="text" autocomplete="off" class="form-control" id="autor"  readonly>
                       <label class="py-2" for="inputAddress">Editorial</label>
-                      <input type="text" autocomplete="off" class="form-control" id="editorial" placeholder=" Publicaciones y Ediciones Salamandra" readonly>
+                      <input type="text" autocomplete="off" class="form-control" id="editorial" readonly>
                     </div> 
 
                     <div class="form-group d-flex flex-column col-3">
@@ -202,14 +205,15 @@
         </div>
 
         <!--botones-->
-        <div class="py-2 d-flex justify-content-center">
+        <div class="py-2 input-group d-flex justify-content-center">
           <button id="add" class="btn btn-success" ><i class='fas fa-plus'></i></button>
           <button id="edit" class="btn btn-light border" ><i class='fas fa-pen-alt'></i></button>
           <button id="delete" class="btn btn-danger" ><i class='fas fa-trash-alt'></i></button>
        </div>
 
+      
         <!-- Bootstrap table  -->
-   <div class="d-flex justify-content-center table-data">
+   <div class="py-4 d-flex justify-content-center table-data">
       <table id="tabla" class="table table-striped table-dark">
           <thead class="thead-dark">
               <tr>
@@ -217,17 +221,18 @@
                   <th>Titulo</th>
                   <th>Autor</th>
                   <th>Editorial</th>
-                  <th>Cantidad</th>
                   <th>Precio</th>
+                  <th>Cantidad</th>
                   <th>Editar</th>
               </tr>
           </thead>
           <tbody>
+
           <?php
-          $conn = mysqli_connect('mysql', 'root', 'root', 'libreria') or die("Connection failed: " . mysqli_connect_error());
+          include "php/conect.php";
           $sql="select * from libro";
           $query=mysqli_query($conn,$sql);
-          
+
           while ($row = mysqli_fetch_assoc($query)){ 
             ?>
           <tr>
@@ -502,6 +507,8 @@
   <!-- Custom scripts for this template -->
   <script src="js/agency.min.js"></script>
 
+  <!-- JavaScript -->
+  <script type="text/javascript" src="plugins/sweetalert2.all.min.js"></script> 
 </body>
 
 </html>

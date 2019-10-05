@@ -102,15 +102,15 @@ $(document).ready(function()
         }
         else{
             Swal.fire({
-                title: 'Error, Las contraseñas no coinciden',
-                type: 'error'
+                title: 'Las contraseñas no coinciden',
+                type: 'warning'
                 });
         }
         }
         else{
             Swal.fire({
-                title: 'Error, Llene todos los campos',
-                type: 'error'
+                title: 'Llene todos los campos',
+                type: 'warning'
                 });
         }
 
