@@ -33,16 +33,26 @@ $(document).ready(function()
                 success: function (respuesta) {      
                     if(respuesta.msg=='ok'){
                         Swal.fire({
-                            title: 'Bienvenido',
-                            type: 'success'
-                            });
-                        $(location).attr('href','index.html');
+                            position: 'center',
+                            type: 'success',
+                            title: 'Your work has been saved',
+                            showConfirmButton: false,
+                            timer: 1500
+                          })
+                            setTimeout(function() { 
+                                $(location).attr('href','index.html');
+                            }, 2000);
+                        
                     }
                     else{
                         Swal.fire({
-                            title: 'Error, Intente más tarde',
+                            title: 'Error, Datos incorrectos',
                             type: 'error'
                             });
+                        
+                        $("#user").val("");
+                        $("#password").val("");
+                            
                     }
                 }
               });
