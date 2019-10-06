@@ -260,8 +260,8 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase">Se parte de nosotros</h2>
-          <h3 class="section-subheading text-muted">Nuestro recorrido con los estudihambres</h3>
+          <h2 class="section-heading text-uppercase">Conócenos!!!</h2>
+          <h3 class="section-subheading text-muted">Nuestro recorrido con nosotros los estudihambres</h3>
         </div>
       </div>
       <div class="row">
@@ -269,29 +269,29 @@
           <ul class="timeline">
             <li>
               <div class="timeline-image">
-                <img class="rounded-circle img-fluid" src="img/about/1.jpg" alt="">
+                <img class="rounded-circle img-fluid" src="img/about/2.jpg" alt="">
               </div>
               <div class="timeline-panel">
                 <div class="timeline-heading">
-                  <h4>2009-2011</h4>
-                  <h4 class="subheading">Our Humble Beginnings</h4>
+                  <h4 class="subheading">El comienzo de todo</h4>
                 </div>
                 <div class="timeline-body">
-                  <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                  <p class="text-muted">Este sitio se hizo pensando en todo aquel estudiante como nosostros, que necesita libros a buen precio y de buena calidad.</p>
                 </div>
               </div>
             </li>
             <li class="timeline-inverted">
               <div class="timeline-image">
-                <img class="rounded-circle img-fluid" src="img/about/2.jpg" alt="">
+                <img class="rounded-circle img-fluid" src="img/about/1.jpg" alt="">
               </div>
               <div class="timeline-panel">
                 <div class="timeline-heading">
-                  <h4>March 2011</h4>
-                  <h4 class="subheading">An Agency is Born</h4>
+                  <h4 class="subheading">Nuestra inspiración</h4>
                 </div>
                 <div class="timeline-body">
-                  <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                  <p class="text-muted">Nuestra mayor inspiración para la realización de este sitio fue la entrega de un proyecto para la materia de "Cómputo en la nube", 
+                    ya después nos llego nuestra segunda inspiración que fueron todos aquellos estudiantes de universidad 
+                  foráneos y no foráneos (así como nosotros) a los cuales AMLO, para que vean libros más baratos y acesibles.</p>
                 </div>
               </div>
             </li>
@@ -301,33 +301,21 @@
               </div>
               <div class="timeline-panel">
                 <div class="timeline-heading">
-                  <h4>December 2012</h4>
-                  <h4 class="subheading">Transition to Full Service</h4>
+                  <h4 class="subheading">Nuestro futuro</h4>
                 </div>
                 <div class="timeline-body">
-                  <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                  <p class="text-muted">El futuro que de nuestro equipo "estudihambres" y de este sitio es incierto, pero lo que si estamos
+                    seguros es de que queremos que este sitio crezca con una gran variedad de libros a sus disposiciones
+                    con grandes precios!!!
+                  </p>
                 </div>
               </div>
             </li>
             <li class="timeline-inverted">
               <div class="timeline-image">
-                <img class="rounded-circle img-fluid" src="img/about/4.jpg" alt="">
-              </div>
-              <div class="timeline-panel">
-                <div class="timeline-heading">
-                  <h4>July 2014</h4>
-                  <h4 class="subheading">Phase Two Expansion</h4>
-                </div>
-                <div class="timeline-body">
-                  <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                </div>
-              </div>
-            </li>
-            <li class="timeline-inverted">
-              <div class="timeline-image">
-                <h4>Be Part
-                  <br>Of Our
-                  <br>Story!</h4>
+                <h4>Se parte
+                  <br>de los
+                  <br>estudihambres!</h4>
               </div>
             </li>
           </ul>
@@ -449,7 +437,7 @@
       </div>
       <div class="row">
         <div class="col-lg-8 mx-auto text-center">
-          <p class="large text-muted">PHP (acrónimo recursivo de PHP: Hypertext Preprocessor) es un lenguaje de código abierto muy popular especialmente adecuado para el desarrollo web y que puede ser incrustado en HTML.</p>
+          <p class="large text-muted">"Sucede más de lo que imaginas, porque no sólo se trata de ingeniería y ciencia, también esta el arte". (Steve Jobs)</p>
         </div>
       </div>
     </div>
