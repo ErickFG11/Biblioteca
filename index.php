@@ -131,6 +131,7 @@
     <div class="container text-center" >
         <h1 class="py-4 bg-dark text-light rounded"><i class="far fa-paper-plane"></i>Administra</h1>
         <div class="border border-primary">
+
         <!--iNPUT ID-->
         <div class="py-2 d-flex justify-content-center" >    
             <div style="width: 50%">
@@ -199,6 +200,7 @@
               <div class="form-row py-2 d-flex justify-content-center">
                 <div class="input-group-prepend file-path-wrapper">
                   <div class="input-group-text bg-light"><i class='fas fa-cloud-upload-alt' aria-hidden="true"></i></div>
+                  
                   <input type='file' value="Subir portada" class="file-path validate" id="upload" accept="image/*">
                  </div>   
               </div>

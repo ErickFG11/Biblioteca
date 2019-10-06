@@ -110,6 +110,31 @@ $(document).ready(function(){
         
     });     
 
+
+    //Guardar portada 
+    $('#upload').change(function(){
+    var input = this;
+    var formData = new FormData();
+     
+    titulo=$("#ad_nombre").val();
+    //Guardar imagen en una carpeta
+    formData.append('image', input.files[0]);
+    formData.append('titulo', titulo);
+
+      $.ajax({
+        url: 'http://localhost:8000/Biblioteca/php/image.php',
+        data: formData,
+        type: "POST",
+        cache: false,
+        processData: false,
+        contentType: false,
+        success: function(respuesta){
+            alert("PHP: "+respuesta);
+        }
+      });
+
+  });
+
     //Botón editar 
     $("#edit").click(function (e){
         Swal.fire({
