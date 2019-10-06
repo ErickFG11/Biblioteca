@@ -95,11 +95,11 @@
                   </div> 
                     <div class="form-group d-flex flex-column col-5">
                       <label for="inputAddress">Titulo</label>
-                      <input type="text" autocomplete="off" class="form-control" id="titulo" readonly>
+                      <input type="text" autocomplete="off" class="form-control" id="titulo" >
                       <label class="py-2" for="inputAddress">Autor</label>
-                      <input type="text" autocomplete="off" class="form-control" id="autor"  readonly>
+                      <input type="text" autocomplete="off" class="form-control" id="autor"  >
                       <label class="py-2" for="inputAddress">Editorial</label>
-                      <input type="text" autocomplete="off" class="form-control" id="editorial" readonly>
+                      <input type="text" autocomplete="off" class="form-control" id="editorial" >
                     </div> 
 
                     <div class="form-group d-flex flex-column col-3">
@@ -107,13 +107,13 @@
                         <div class="input-group-prepend">
                           <div class="input-group-text bg-warning"><i class='far fa-money-bill-alt'></i></div>
                         </div>
-                      <input type="text" autocomplete="off" class="form-control " id="price" placeholder="Precio" readonly>
+                      <input type="text" autocomplete="off" class="form-control " id="price" placeholder="Precio" >
 
                       <div class="input-group py-4">
                         <div class="input-group-prepend">
                           <div class="input-group-text bg-warning"><i class='fas fa-book-open'></i></div>
                         </div>
-                      <input type="text" autocomplete="off" class="form-control " id="cant" placeholder="Cantidad" readonly>
+                      <input type="text" autocomplete="off" class="form-control " id="cant" placeholder="Cantidad" >
                       </div>
                     </div> 
             </div>

@@ -16,7 +16,10 @@ $(document).ready(function(){
             return false;
         }
     }
-    
+    $('#ad_nombre').on('input', function () { 
+        this.value = this.value.replace(/[^ 0-9a-záéíóúüñ]+/ig,"");
+    });
+
     $('#ad_autor').on('input', function () { 
         this.value = this.value.replace(/[^ a-záéíóúüñ]+/ig,"");
     });
@@ -45,6 +48,33 @@ $(document).ready(function(){
             setTimeout(function() { 
                 $(location).attr('href','login.html');
             }, 1500);
+    });
+
+    //Busquedas predictivas 
+    $('#NameBook').on('keyup', function(){
+        var search = $('#NameBook').val();
+        if(search.length!=0){
+            $.ajax({
+                url: 'http://localhost:8000/Biblioteca/php/busqueda.php',
+                data: {'search': search},
+                dataType: 'jsonp',
+                type: "POST",
+                success: function (respuesta) {      
+                    $("#titulo").val(respuesta.titulo);
+                    $("#autor").val(respuesta.autor);
+                    $("#editorial").val(respuesta.editorial);
+                    $("#price").val(respuesta.precio);
+                    $("#cant").val(respuesta.cantidad);
+                }
+              });
+        }
+        else{
+            $("#titulo").val('');
+            $("#autor").val('');
+            $("#editorial").val('');
+            $("#price").val('');
+            $("#cant").val('');
+        }
     });
 
     //Botón insertar 
