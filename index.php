@@ -237,14 +237,13 @@
 
           while ($row = mysqli_fetch_assoc($query)){ 
             ?>
-          <tr>
+          <tr id="<?php echo $row ['id_libro']; ?>">
           <td> <?php echo $row['id_libro'] ?> </td>
           <td> <?php echo $row['titulo'] ?> </td>
           <td> <?php echo $row['autor'] ?> </td>
           <td> <?php echo $row['editorial'] ?> </td>
           <td> <?php echo $row['precio'] ?> </td>
           <td> <?php echo $row['cantidad'] ?> </td>
-          <td ><i class="fas fa-edit btnedit" data-id="<?php echo $row['id_libro']; ?>"></i></td>
           </tr>
           <?php
             }
@@ -499,6 +498,44 @@
 
   <!-- JavaScript -->
   <script type="text/javascript" src="plugins/sweetalert2.all.min.js"></script> 
-</body>
 
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cyborg/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <script src="bootstable.js"></script>
+  <script>
+ $('#tabla').SetEditable({
+  columnsEd: "1,2,3,4,5",
+        onEdit: function(columnsEd) {
+          var empId = columnsEd[0].childNodes[1].innerHTML;
+          var titulo = columnsEd[0].childNodes[3].innerHTML;
+          var autor = columnsEd[0].childNodes[5].innerHTML;
+          var editorial = columnsEd[0].childNodes[7].innerHTML;
+          var cantidad = columnsEd[0].childNodes[9].innerHTML;
+          var precio = columnsEd[0].childNodes[11].innerHTML;
+          $.ajax({
+              type: 'POST',			
+              url : "php/action.php",	
+              dataType: "json",					
+              data: {id:empId, titulo:titulo, autor:autor, editorial:editorial, cantidad:cantidad, precio:precio, action:'edit'},			
+              success: function (response) {
+                  if(response.status) {
+                  }						
+              }
+          });
+        },
+        onBeforeDelete: function(columnsEd) {
+        var empId = columnsEd[0].childNodes[1].innerHTML;
+        $.ajax({
+              type: 'POST',			
+              url : "php/action.php",
+              dataType: "json",					
+              data: {id:empId, action:'delete'},			
+              success: function (response) {
+                  if(response.status) {
+                  }			
+              }
+          });
+        },
+      });
+</script>
+</body>
 </html>
