@@ -208,9 +208,7 @@
 
         <!--botones-->
         <div class="py-2 input-group d-flex justify-content-center">
-          <button id="add" class="btn btn-success" ><i class='fas fa-plus'></i></button>
-          <button id="edit" class="btn btn-light border" ><i class='fas fa-pen-alt'></i></button>
-          <button id="delete" class="btn btn-danger" ><i class='fas fa-trash-alt'></i></button>
+          <button id="add" class="btn btn-success" ><i class='fas fa-plus'></i> Agregar </button>
        </div>
 
       
@@ -501,41 +499,49 @@
 
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cyborg/bootstrap.min.css" rel="stylesheet" type="text/css">
   <script src="bootstable.js"></script>
-  <script>
- $('#tabla').SetEditable({
-  columnsEd: "1,2,3,4,5",
-        onEdit: function(columnsEd) {
-          var empId = columnsEd[0].childNodes[1].innerHTML;
-          var titulo = columnsEd[0].childNodes[3].innerHTML;
-          var autor = columnsEd[0].childNodes[5].innerHTML;
-          var editorial = columnsEd[0].childNodes[7].innerHTML;
-          var cantidad = columnsEd[0].childNodes[9].innerHTML;
-          var precio = columnsEd[0].childNodes[11].innerHTML;
-          $.ajax({
-              type: 'POST',			
-              url : "php/action.php",	
-              dataType: "json",					
-              data: {id:empId, titulo:titulo, autor:autor, editorial:editorial, cantidad:cantidad, precio:precio, action:'edit'},			
-              success: function (response) {
-                  if(response.status) {
-                  }						
-              }
-          });
-        },
-        onBeforeDelete: function(columnsEd) {
-        var empId = columnsEd[0].childNodes[1].innerHTML;
-        $.ajax({
-              type: 'POST',			
-              url : "php/action.php",
-              dataType: "json",					
-              data: {id:empId, action:'delete'},			
-              success: function (response) {
-                  if(response.status) {
-                  }			
-              }
-          });
-        },
-      });
+
+<script>
+  $('#tabla').SetEditable({
+        columnsEd: "1,2,3,4,5",
+              onEdit: function(columnsEd) {
+                var empId = columnsEd[0].childNodes[1].innerHTML;
+                var titulo = columnsEd[0].childNodes[3].innerHTML;
+                var autor = columnsEd[0].childNodes[5].innerHTML;
+                var editorial = columnsEd[0].childNodes[7].innerHTML;
+                var cantidad = columnsEd[0].childNodes[9].innerHTML;
+                var precio = columnsEd[0].childNodes[11].innerHTML;
+                $.ajax({
+                    type: 'POST',			
+                    url : 'php/action.php',	
+                    dataType: "json",					
+                    data: {id:empId, titulo:titulo, autor:autor, editorial:editorial, cantidad:cantidad, precio:precio, action:'edit'},			
+                    success: function (response) {
+                      
+                        if(response.status) {
+                          
+                        }						
+                    }
+                });
+              },
+              onBeforeDelete: function(columnsEd) {
+              var empId = columnsEd[0].childNodes[1].innerHTML;
+              $.ajax({
+                    type: 'POST',			
+                    url: 'php/action.php',
+                    dataType: "json",					
+                    data: {id:empId, action:'delete'},			
+                    success: function (response) {
+                        if(response.status) {
+                          Swal.fire({
+                            title: 'Se ha borrado',
+                            type: 'error'
+                            });
+                        }			
+                    }
+                });
+              },
+            });
 </script>
+
 </body>
 </html>

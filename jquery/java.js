@@ -1,5 +1,24 @@
 $(document).ready(function(){
 
+    //evitar ir a la pagina anterior
+    if (window.history && window.history.pushState) {
+
+        $(window).on('popstate', function() {
+          var hashLocation = location.hash;
+          var hashSplit = hashLocation.split("#!/");
+          var hashName = hashSplit[1];
+    
+          if (hashName !== '') {
+            var hash = window.location.hash;
+            if (hash === '') {
+              //alert('Back button was pressed.');
+            }
+          }
+        });
+    
+        window.history.pushState('forward', null, './#forward');
+      }
+
     //variables 
     var titulo;
     var autor;
@@ -77,6 +96,8 @@ $(document).ready(function(){
         }
     });
 
+    
+
     //Botón insertar 
     $('#add').click(function (e) { 
         titulo=$("#ad_nombre").val();
@@ -112,9 +133,9 @@ $(document).ready(function(){
                         $("#ad_editorial").val('');
                         $("#ad_precio").val('');
                         $("#ad_cantidad").val('');
-    
+                        
                         //refrescar tabla 
-                        $('#tabla').load(location.href + '#tabla'); 
+                        $("#tabla").load(location.href+" #tabla>*","");
                     }
                     else{
                         Swal.fire({

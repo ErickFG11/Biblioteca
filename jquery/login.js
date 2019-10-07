@@ -1,5 +1,25 @@
 $(document).ready(function()
 {
+
+      //evitar ir a la pagina anterior
+      if (window.history && window.history.pushState) {
+
+        $(window).on('popstate', function() {
+          var hashLocation = location.hash;
+          var hashSplit = hashLocation.split("#!/");
+          var hashName = hashSplit[1];
+    
+          if (hashName !== '') {
+            var hash = window.location.hash;
+            if (hash === '') {
+              //alert('Back button was pressed.');
+            }
+          }
+        });
+    
+        window.history.pushState('forward', null, './#forward');
+      }
+
     var user;
     var password;
 
@@ -26,7 +46,7 @@ $(document).ready(function()
         };
         if(vacios(user, password)==true){
             $.ajax({
-                url: 'http://localhost:8000/Biblioteca/php/login.php',
+                url: 'http://10.74.60.33:8000/Biblioteca/php/login.php',
                 data: parametros,
                 dataType: 'jsonp',
                 type: "GET",
